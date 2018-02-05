@@ -220,7 +220,7 @@ class Discriminator(nn.Module):
         elif resl==6 or resl==7 or resl==8 or resl==9 or resl==10:
             halving = True
             for i in range(int(resl)-5):
-                ndim = ndim/2
+                ndim = ndim//2
         layers = []
         if halving:
             layers = conv(layers, ndim, ndim, 3, 1, 1, self.flag_leaky, self.flag_bn, self.flag_wn, pixel=False)
